@@ -44,12 +44,6 @@ const toggleAccordion = (index) => {
 
     }))
 }
-/* if the indexes match, then it makes it from false to treu thereby opening it (!item.open), if it does not match, meaning
-those that are not clicked, then they keep their current value of item.open, so if they are open they stay open, if they
-are closed they stay closed. if we want to close them you have to do like this:
-!item.open : false,
-this closing every other one that is not clicked.
-*/
 
 
 
@@ -58,27 +52,3 @@ this closing every other one that is not clicked.
 
 </script>
 
-<!-- 
-    This code defines an array of items, each representing a section in an accordion component. 
-    Each item has a `title`, `content`, and `open` property. The `open` property is used to track whether 
-    the section is currently open or closed.
-
-The `toggleAccordion` function is responsible for toggling the state of an accordion section. It takes an `index` parameter,
- which indicates the index of the item to toggle.
-
-Here's how the `toggleAccordion` function works:
-
-1. It uses the `map` method to iterate over each item in the `items` array.
-2. For each item, it spreads its properties using the spread syntax (`...item`) to create a new object.
-3. It updates the `open` property based on whether the index of the current item matches the index passed to the 
-function (`i === index`). (the map method like the v-for iterates through the child objects the items array, takes out
-their propeties and gives the index (here being called i) of each of them. so if index = i, it then does the logic. )
-   - If the indices match, it toggles the value of the `open` property (`!item.open`), i.e., if it was `true`, it becomes
-    `false`, and vice versa.
-   - If the indices don't match, it sets the `open` property to `false`, effectively closing the other accordion sections.
-4. It returns the updated array of items.
-
-By toggling the `open` property of the selected item while ensuring that all other items have their `open` property 
-set to `false`, this function enables the accordion to expand or collapse sections as desired, providing a user-friendly 
-interface for navigating the content.
--->
